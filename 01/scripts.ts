@@ -6,12 +6,13 @@ type Usuario = {
     dataNacimento?: string
 }
 type UsuarioSemRg = Omit<Usuario, 'rg'>
+type UsuarioCompulsorio = Required<UsuarioSemRg>
 
 const cadastrarUsuário = (info: Usuario): Usuario => {
     return info;
 }
 
-const cadastrarUsuarioSemRg = (info: UsuarioSemRg) => {
+const cadastrarUsuarioSemRg = (info: UsuarioCompulsorio) => {
     return info
 }
 
@@ -23,7 +24,7 @@ const meninoDoRg: Usuario = {
     dataNacimento: '01/08/1992 8:00 AM'
 }
 
-const meninoSemRg: UsuarioSemRg = {
+const meninoSemRg: UsuarioCompulsorio = {
     nome: 'Lukinha',
     email: 'lukinha@email.com',
     cpf: '12345678910',
